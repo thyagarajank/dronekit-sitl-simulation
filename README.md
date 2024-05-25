@@ -103,6 +103,10 @@ Enter Remote Port: 5760
 ```
 ### Step 9. Run SITL.
 Open another Anaconda Prompt window, Run ARM-test and Takeoff-RTL-test Python Program.
+#### Port Number.
+Referring to the port in the program, ensure that different port numbers are utilized between the Ground Control Station (GCS) and the program's source code. For instance, when connecting to the vehicle, like a simulator operating on the same computer, utilize a distinct port:
+vehicle = connect('tcp:127.0.0.1:5762', wait_ready=True)
+
 ```
 python Arm-test.py
 ```
@@ -111,7 +115,7 @@ python Takeoff-RTL-Test.py
 ```
 The SITL (Software In The Loop) drone is flying at an altitude of 20 meters. The drone program runs without any errors, indicating that it is functioning correctly and is ready to proceed to the next step.
 
-### Step 9. Testing Pattern.
+### Step 10. Testing Pattern.
 Simulated vehicle, arms it, commands it to take off to a specified altitude, flies it in a circular pattern, and then returns it to the launch (home) location.
 ```
 python circular-pattern.py
